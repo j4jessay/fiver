@@ -1,0 +1,332 @@
+<mxfile host="app.diagrams.net" modified="2025-11-10T12:00:00.000Z" agent="Claude" version="21.0.0" etag="professional-lakehouse" type="device">
+  <diagram id="professional-lakehouse" name="Professional Databricks Lakehouse Architecture">
+    <mxGraphModel dx="1920" dy="1080" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Background -->
+        <mxCell id="bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry width="1600" height="1200" as="geometry" />
+        </mxCell>
+
+        <!-- Title -->
+        <mxCell id="title" value="Enterprise Databricks Lakehouse Architecture with Databuck Data Quality" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=26;fontStyle=1;fontColor=#1B3139;fontFamily=Calibri;" vertex="1" parent="1">
+          <mxGeometry x="200" y="20" width="1200" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- LAYER 1: DATA SOURCES -->
+        <mxCell id="layer1-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1976D2;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="1360" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="layer1-title" value="DATA SOURCES" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#1976D2;fontFamily=Calibri;" vertex="1" parent="1">
+          <mxGeometry x="55" y="100" width="200" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Data Sources Components -->
+        <mxCell id="src-db" value="Relational&#xa;Databases" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1976D2;strokeWidth=2;fontSize=12;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="140" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="src-api" value="REST APIs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1976D2;strokeWidth=2;fontSize=12;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="240" y="140" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="src-kafka" value="Kafka&#xa;Streams" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1976D2;strokeWidth=2;fontSize=12;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="400" y="140" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="src-files" value="Files &amp;&#xa;Logs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1976D2;strokeWidth=2;fontSize=12;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="560" y="140" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="src-saas" value="SaaS&#xa;Applications" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1976D2;strokeWidth=2;fontSize=12;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="720" y="140" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="src-iot" value="IoT &amp;&#xa;Sensors" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1976D2;strokeWidth=2;fontSize=12;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="880" y="140" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- LAYER 2: INGESTION -->
+        <mxCell id="layer2-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#388E3C;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="230" width="1360" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="layer2-title" value="INGESTION LAYER" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#388E3C;fontFamily=Calibri;" vertex="1" parent="1">
+          <mxGeometry x="55" y="240" width="200" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Ingestion Components -->
+        <mxCell id="ing-autoloader" value="Auto Loader" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#388E3C;strokeWidth=2;fontSize=12;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="80" y="280" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ing-streaming" value="Structured&#xa;Streaming" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#388E3C;strokeWidth=2;fontSize=12;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="250" y="280" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ing-kafka" value="Kafka&#xa;Connect" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#388E3C;strokeWidth=2;fontSize=12;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="420" y="280" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ing-rest" value="REST API&#xa;Ingestion" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#388E3C;strokeWidth=2;fontSize=12;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="590" y="280" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ing-cdc" value="Change Data&#xa;Capture" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#388E3C;strokeWidth=2;fontSize=12;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="760" y="280" width="130" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Arrows Layer 1 to Layer 2 -->
+        <mxCell id="arrow-src-ing" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=4;strokeColor=#40D1F5;endArrow=block;endFill=1;curved=0;" edge="1" parent="1" source="src-db" target="ing-autoloader">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- LAYER 3: DATA QUALITY & VALIDATION (DATABUCK) -->
+        <mxCell id="layer3-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;strokeWidth=3;arcSize=8;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="370" width="1360" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="layer3-title" value="DATA QUALITY &amp; VALIDATION LAYER" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=17;fontStyle=1;fontColor=#7B1FA2;fontFamily=Calibri;" vertex="1" parent="1">
+          <mxGeometry x="55" y="380" width="350" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Databuck Main Component -->
+        <mxCell id="databuck-main" value="DATABUCK&#xa;by FirstEigen" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7B1FA2;strokeColor=#7B1FA2;strokeWidth=3;fontSize=14;fontFamily=Calibri;fontColor=#FFFFFF;shadow=1;arcSize=10;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="80" y="420" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="databuck-trust" value="Data Trust&#xa;Score Engine" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9C27B0;strokeColor=#7B1FA2;strokeWidth=2;fontSize=11;fontFamily=Calibri;fontColor=#FFFFFF;shadow=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="280" y="420" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="databuck-anomaly" value="AI/ML Anomaly&#xa;Detection" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9C27B0;strokeColor=#7B1FA2;strokeWidth=2;fontSize=11;fontFamily=Calibri;fontColor=#FFFFFF;shadow=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="440" y="420" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="databuck-circuit" value="Circuit&#xa;Breaker" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9C27B0;strokeColor=#7B1FA2;strokeWidth=2;fontSize=11;fontFamily=Calibri;fontColor=#FFFFFF;shadow=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="600" y="420" width="110" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="dlt-exp" value="DLT&#xa;Expectations" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BA68C8;strokeColor=#7B1FA2;strokeWidth=2;fontSize=11;fontFamily=Calibri;fontColor=#FFFFFF;shadow=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="750" y="420" width="110" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="lakehouse-mon" value="Lakehouse&#xa;Monitoring" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BA68C8;strokeColor=#7B1FA2;strokeWidth=2;fontSize=11;fontFamily=Calibri;fontColor=#FFFFFF;shadow=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="900" y="420" width="110" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Performance Badge -->
+        <mxCell id="perf-badge" value="100M records/60sec" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4CAF50;strokeColor=#2E7D32;strokeWidth=2;fontSize=10;fontFamily=Calibri;fontColor=#FFFFFF;shadow=1;arcSize=15;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1050" y="430" width="130" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="score-badge" value="Trust Score 0-100" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#40D1F5;strokeColor=#0288D1;strokeWidth=2;fontSize=10;fontFamily=Calibri;fontColor=#FFFFFF;shadow=1;arcSize=15;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1050" y="465" width="130" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- LAYER 4: PROCESSING -->
+        <mxCell id="layer4-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#F57F17;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="530" width="1360" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="layer4-title" value="PROCESSING LAYER" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#F57F17;fontFamily=Calibri;" vertex="1" parent="1">
+          <mxGeometry x="55" y="540" width="200" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Processing Components -->
+        <mxCell id="proc-dlt" value="Delta Live&#xa;Tables (DLT)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#F57F17;strokeWidth=2;fontSize=12;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="80" y="575" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="proc-bronze" value="Bronze Layer&#xa;(Raw)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CD853F;strokeColor=#8B4513;strokeWidth=2;fontSize=11;fontFamily=Calibri;fontColor=#FFFFFF;shadow=1;arcSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="250" y="575" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="proc-silver" value="Silver Layer&#xa;(Cleaned)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C0C0C0;strokeColor=#808080;strokeWidth=2;fontSize=11;fontFamily=Calibri;fontColor=#000000;shadow=1;arcSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="400" y="575" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="proc-gold" value="Gold Layer&#xa;(Aggregated)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD700;strokeColor=#FFA500;strokeWidth=2;fontSize=11;fontFamily=Calibri;fontColor=#000000;shadow=1;arcSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="550" y="575" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="proc-workflows" value="Databricks&#xa;Workflows" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#F57F17;strokeWidth=2;fontSize=12;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="700" y="575" width="130" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Medallion Arrows -->
+        <mxCell id="arrow-bronze-silver" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=4;strokeColor=#F57F17;endArrow=block;endFill=1;" edge="1" parent="1" source="proc-bronze" target="proc-silver">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-silver-gold" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=4;strokeColor=#F57F17;endArrow=block;endFill=1;" edge="1" parent="1" source="proc-silver" target="proc-gold">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- LAYER 5: STORAGE & GOVERNANCE -->
+        <mxCell id="layer5-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE0B2;strokeColor=#E65100;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="670" width="1360" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="layer5-title" value="STORAGE &amp; GOVERNANCE" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#E65100;fontFamily=Calibri;" vertex="1" parent="1">
+          <mxGeometry x="55" y="680" width="280" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Storage Components -->
+        <mxCell id="stor-delta" value="Delta Lake" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E65100;strokeWidth=2;fontSize=13;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="80" y="720" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="stor-unity" value="Unity Catalog&#xa;+ Trust Scores" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E65100;strokeWidth=2;fontSize=12;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="270" y="720" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="stor-metastore" value="Metastore" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FB8C00;strokeColor=#E65100;strokeWidth=2;fontSize=11;fontFamily=Calibri;fontColor=#FFFFFF;shadow=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="460" y="720" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="stor-lineage" value="Lineage &amp;&#xa;Audit Logs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FB8C00;strokeColor=#E65100;strokeWidth=2;fontSize=11;fontFamily=Calibri;fontColor=#FFFFFF;shadow=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="610" y="720" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="stor-rbac" value="Access&#xa;Control" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FB8C00;strokeColor=#E65100;strokeWidth=2;fontSize=11;fontFamily=Calibri;fontColor=#FFFFFF;shadow=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="760" y="720" width="110" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- LAYER 6: AI/ML -->
+        <mxCell id="layer6-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1BEE7;strokeColor=#6A1B9A;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="810" width="1360" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="layer6-title" value="AI/ML LAYER" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#6A1B9A;fontFamily=Calibri;" vertex="1" parent="1">
+          <mxGeometry x="55" y="820" width="150" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- AI/ML Components -->
+        <mxCell id="ml-mlflow" value="MLflow" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6A1B9A;strokeWidth=2;fontSize=12;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="80" y="855" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ml-vector" value="Vector&#xa;Search" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6A1B9A;strokeWidth=2;fontSize=12;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="230" y="855" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ml-serving" value="Model&#xa;Serving" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6A1B9A;strokeWidth=2;fontSize=12;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="380" y="855" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ml-rag" value="RAG&#xa;System" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#8E24AA;strokeColor=#6A1B9A;strokeWidth=2;fontSize=12;fontFamily=Calibri;fontColor=#FFFFFF;shadow=1;arcSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="530" y="855" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ml-agents" value="Agentic AI&#xa;Framework" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#8E24AA;strokeColor=#6A1B9A;strokeWidth=2;fontSize=11;fontFamily=Calibri;fontColor=#FFFFFF;shadow=1;arcSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="680" y="855" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ml-feature" value="Feature&#xa;Store" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6A1B9A;strokeWidth=2;fontSize=12;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="830" y="855" width="110" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- LAYER 7: CONSUMPTION -->
+        <mxCell id="layer7-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCCBC;strokeColor=#D84315;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="950" width="1360" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="layer7-title" value="CONSUMPTION LAYER" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#D84315;fontFamily=Calibri;" vertex="1" parent="1">
+          <mxGeometry x="55" y="960" width="240" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Consumption Components -->
+        <mxCell id="cons-sql" value="Databricks&#xa;SQL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D84315;strokeWidth=2;fontSize=11;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="80" y="995" width="105" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="cons-genie" value="Genie&#xa;(AI/BI)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D84315;strokeWidth=2;fontSize=11;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="220" y="995" width="105" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="cons-thoughtspot" value="ThoughtSpot" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D84315;strokeWidth=2;fontSize=11;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="360" y="995" width="105" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="cons-powerbi" value="Power BI" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D84315;strokeWidth=2;fontSize=11;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="500" y="995" width="105" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="cons-api" value="REST APIs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D84315;strokeWidth=2;fontSize=11;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="640" y="995" width="105" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="cons-apps" value="Applications" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D84315;strokeWidth=2;fontSize=11;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="780" y="995" width="105" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- LAYER 8: SECURITY & MONITORING -->
+        <mxCell id="layer8-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#C62828;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1080" width="1360" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="layer8-title" value="SECURITY &amp; MONITORING" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#C62828;fontFamily=Calibri;" vertex="1" parent="1">
+          <mxGeometry x="55" y="1090" width="300" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Security Components -->
+        <mxCell id="sec-iam" value="IAM &amp; RBAC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C62828;strokeWidth=2;fontSize=11;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1125" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-encrypt" value="Encryption" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C62828;strokeWidth=2;fontSize=11;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="230" y="1125" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-audit" value="Audit Logs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C62828;strokeWidth=2;fontSize=11;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="380" y="1125" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-monitor" value="Monitoring" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C62828;strokeWidth=2;fontSize=11;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="530" y="1125" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sec-alerts" value="Alerting" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C62828;strokeWidth=2;fontSize=11;fontFamily=Calibri;fontColor=#0B2026;shadow=1;arcSize=12;" vertex="1" parent="1">
+          <mxGeometry x="680" y="1125" width="110" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- RIGHT SIDE: LEGEND -->
+        <mxCell id="legend-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#424242;strokeWidth=2;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="1420" y="90" width="160" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" value="LEGEND" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=15;fontStyle=1;fontColor=#424242;fontFamily=Calibri;" vertex="1" parent="1">
+          <mxGeometry x="1420" y="100" width="160" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Legend Colors -->
+        <mxCell id="leg-1" value="Data Sources" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1976D2;strokeWidth=1;fontSize=10;fontFamily=Calibri;fontColor=#0B2026;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="135" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-2" value="Ingestion" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#388E3C;strokeWidth=1;fontSize=10;fontFamily=Calibri;fontColor=#0B2026;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="160" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-3" value="Data Quality" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;strokeWidth=2;fontSize=10;fontFamily=Calibri;fontColor=#7B1FA2;align=left;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1430" y="185" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-4" value="Processing" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#F57F17;strokeWidth=1;fontSize=10;fontFamily=Calibri;fontColor=#0B2026;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="210" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-5" value="Storage/Gov" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE0B2;strokeColor=#E65100;strokeWidth=1;fontSize=10;fontFamily=Calibri;fontColor=#0B2026;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="235" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-6" value="AI/ML" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E1BEE7;strokeColor=#6A1B9A;strokeWidth=1;fontSize=10;fontFamily=Calibri;fontColor=#0B2026;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="260" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-7" value="Consumption" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFCCBC;strokeColor=#D84315;strokeWidth=1;fontSize=10;fontFamily=Calibri;fontColor=#0B2026;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="285" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-8" value="Security" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#C62828;strokeWidth=1;fontSize=10;fontFamily=Calibri;fontColor=#0B2026;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="310" width="140" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg-arrow" value="→ Data Flow" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;fontFamily=Calibri;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="340" width="140" height="15" as="geometry" />
+        </mxCell>
+
+        <!-- KEY FEATURES BOX -->
+        <mxCell id="features-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;strokeWidth=2;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="1420" y="390" width="160" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="features-title" value="KEY FEATURES" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;fontColor=#2E7D32;fontFamily=Calibri;" vertex="1" parent="1">
+          <mxGeometry x="1420" y="400" width="160" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="feat-1" value="✓ 100M records/60sec" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#2E7D32;fontFamily=Calibri;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1430" y="435" width="140" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="feat-2" value="✓ Data Trust Score" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#2E7D32;fontFamily=Calibri;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="455" width="140" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="feat-3" value="✓ AI/ML Anomaly" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#2E7D32;fontFamily=Calibri;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="475" width="140" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="feat-4" value="✓ Circuit Breaker" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#2E7D32;fontFamily=Calibri;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="495" width="140" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="feat-5" value="✓ Real-time + Batch" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#2E7D32;fontFamily=Calibri;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="515" width="140" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="feat-6" value="✓ RAG + Agentic AI" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#2E7D32;fontFamily=Calibri;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="535" width="140" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="feat-7" value="✓ 250GB/day volume" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#2E7D32;fontFamily=Calibri;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="555" width="140" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="feat-8" value="✓ 99.9% Availability" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#2E7D32;fontFamily=Calibri;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="575" width="140" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="feat-9" value="✓ Unity Catalog" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#2E7D32;fontFamily=Calibri;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="595" width="140" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Data Flow Indicator -->
+        <mxCell id="flow-label" value="DATA FLOW ↓" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=1;fontColor=#40D1F5;fontFamily=Calibri;rotation=0" vertex="1" parent="1">
+          <mxGeometry x="5" y="550" width="30" height="150" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
