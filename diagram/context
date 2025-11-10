@@ -1,0 +1,9 @@
+
+data comes in various formats API, CSV, S3, On premises oracle database , lands into raw zone and then , we can have bronze, silver & Gold zones 
+and from golden source , we can get data into Gen AI tools such as Thoughtpsot and one more output for machine learning /AI
+
+reference links :https://docs.databricks.com/aws/en/lakehouse-architecture/reference
+
+![alt text](image.png)
+
+![alt text](image-1.png)
