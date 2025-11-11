@@ -1,0 +1,105 @@
+version: '3.8'
+
+services:
+  # ZooKeeper - Manages Kafka cluster coordination
+  # In production, you'd run 3-5 ZooKeeper servers for high availability
+  # For learning, one is enough
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.0
+    container_name: zookeeper
+    hostname: zookeeper
+    ports:
+      - "2181:2181"    # ZooKeeper client port
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+      ZOOKEEPER_LOG4J_ROOT_LOGLEVEL: WARN
+    networks:
+      - kafka-network
+    healthcheck:
+      test: echo stat | nc localhost 2181
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # Kafka Broker - The actual message broker
+  # This is where topics, partitions, and messages live
+  kafka:
+    image: confluentinc/cp-kafka:7.5.0
+    container_name: kafka
+    hostname: kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"    # External access (from your laptop)
+      - "29092:29092"  # Internal access (between containers)
+    environment:
+      # Broker Configuration
+      KAFKA_BROKER_ID: 0
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+
+      # Listener Configuration
+      # PLAINTEXT:// = no authentication (OK for development)
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+
+      # Topic Defaults
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1        # Only 1 broker, so RF=1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'          # Allow auto-creation (for learning)
+      KAFKA_NUM_PARTITIONS: 3                          # Default partitions for new topics
+
+      # Log Configuration
+      KAFKA_LOG_RETENTION_HOURS: 168                   # Keep messages for 7 days
+      KAFKA_LOG_SEGMENT_BYTES: 1073741824             # 1 GB log segments
+      KAFKA_LOG4J_ROOT_LOGLEVEL: WARN                 # Reduce log noise
+
+      # Performance Tuning (optional, for reference)
+      KAFKA_COMPRESSION_TYPE: 'producer'               # Use producer's compression
+      KAFKA_MESSAGE_MAX_BYTES: 1048588                # Max message size: 1 MB
+    networks:
+      - kafka-network
+    healthcheck:
+      test: kafka-broker-api-versions --bootstrap-server localhost:9092 || exit 1
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    volumes:
+      - kafka-data:/var/lib/kafka/data
+
+networks:
+  kafka-network:
+    driver: bridge
+
+volumes:
+  kafka-data:
+    driver: local
+
+# ============================================================================
+# WHAT YOU'VE JUST SET UP
+# ============================================================================
+#
+# 1. ZooKeeper (Port 2181)
+#    - Manages Kafka cluster state
+#    - Tracks broker health
+#    - Stores metadata (topics, partitions, configs)
+#
+# 2. Kafka Broker (Ports 9092, 29092)
+#    - Single broker (ID: 0)
+#    - Stores all topics and partitions
+#    - Serves producers and consumers
+#
+# IMPORTANT PORTS:
+#   - localhost:2181 = ZooKeeper (for Kafka to connect)
+#   - localhost:9092 = Kafka (for YOUR applications to connect)
+#   - kafka:29092 = Kafka (for OTHER containers to connect)
+#
+# NEXT STEPS:
+#   1. Start services: docker compose up -d
+#   2. Check logs: docker compose logs -f
+#   3. Verify: docker ps
+#   4. Follow README.md for hands-on exercises
+#
+# ============================================================================
