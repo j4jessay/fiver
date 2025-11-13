@@ -1,0 +1,127 @@
+https://www.databricks.com/resources/architectures/databricks-ai-security-framework
+
+
+AI Strategy for Databricks: Achieving Best-in-Class GenAI and Agentic CapabilitiesExecutive SummaryThis strategy outlines a comprehensive approach to building a best-in-class AI ecosystem on Databricks, leveraging Generative AI (GenAI) and agentic workflows to drive intelligent, autonomous decision-making. By centralizing metadata governance in Unity Catalog, we ensure scalable data discovery, compliance, and quality. Outputs will flow seamlessly to BI tools like ThoughtSpot for interactive analytics and Databricks AI/BI Genie for natural language insights. Downstream, the platform will power ML/AI applications using LangChain for orchestration and Retrieval-Augmented Generation (RAG) for context-aware intelligence. This aligns with 2025 priorities for data leaders, emphasizing agentic AI to move beyond hype to measurable business impact. 
+
+databricks.com +1
+
+The result: A unified lakehouse that accelerates innovation, reduces silos, and delivers ROI through automated workflows, real-time insights, and secure AI deployment.Vision and ObjectivesVision: Transform Databricks into an agentic AI powerhouse where data assets are discoverable, governed, and actionable—enabling self-improving agents to handle complex tasks like predictive maintenance, customer personalization, or fraud detection.Key Objectives:Achieve 50% faster time-to-insight via GenAI-driven BI.
+Ensure 100% metadata coverage for governance and lineage.
+Deploy 10+ agentic workflows in production within 12 months, integrating RAG for hallucination-free responses.
+Scale ML/AI models with LangChain, reducing development cycles by 40%.
+
+Architecture OverviewThe architecture is built on Databricks' Mosaic AI suite, Unity Catalog, and Delta Lake for a secure, scalable foundation. It spans ingestion, processing, governance, and consumption layers.Layer
+Components
+Key Features
+Data Ingestion & Processing
+Delta Live Tables (DLT), Auto Loader
+Real-time streaming, ETL pipelines with built-in quality checks.
+Governance
+Unity Catalog
+Centralized metadata, access controls, lineage tracking.
+AI/ML
+Mosaic AI Vector Search, Agent Framework, MLflow
+Agentic workflows, RAG pipelines, model serving.
+BI Consumption
+ThoughtSpot Connector, AI/BI Genie
+Natural language queries, live querying on SQL warehouses.
+Advanced AI
+LangChain Integration, Foundation Models (e.g., Llama 3.1)
+Orchestration for agents, RAG for contextual retrieval.
+
+This setup supports agentic AI by enabling agents to reason, retrieve data, and act autonomously—e.g., an agent debugging code via GenAI evaluation loops.
+
+**Detailed Architecture Resources:**
+For technical implementation details and visual architecture diagrams, see:
+- `/databricks_ai_architecture/diagrams/04-databricks-ai-ml-deep-dive.drawio` - Comprehensive AI/ML architecture diagram covering:
+  * ML Training & Development (Spark ML, Deep Learning, AutoML, frameworks)
+  * Generative AI & Foundation Models (DBRX, Llama, RAG, Agentic AI)
+  * Deployment & Model Serving (Real-time, batch, streaming patterns)
+  * Use Cases & Applications (Churn prediction, RAG Q&A, fraud detection)
+- `/databricks_ai_architecture/documentation/AI_ML_CAPABILITIES_SUMMARY.md` - Technical implementation guide with code examples
+- `/databricks_ai_architecture/documentation/AI_ML_DIAGRAM_04_GUIDE.md` - Walkthrough of the AI/ML deep-dive diagram
+
+databricks.com +1
+
+Metadata Management at the Catalog LevelRobust metadata definition in Unity Catalog is the cornerstone of this strategy, ensuring discoverability, governance, and interoperability across BI and AI tools. Unity Catalog stores metadata (schemas, tables, permissions, lineage) in the Databricks control plane, separate from storage (e.g., S3), for scalability and security. 
+
+community.databricks.com
+
+Best Practices for Definition and Implementation:Catalog-Level Defaults: Define a default storage location at the catalog level (e.g., s3://bucket/catalog-name/) to enforce consistency. This applies to all schemas and tables unless overridden, simplifying onboarding. 
+
+medium.com
+
+Tagging and Documentation: Mandate business-friendly tags (e.g., {"domain": "finance", "sensitivity": "PII", "owner": "team@email.com"}) and descriptions for all assets. Use SQL commands like ALTER TABLE ... SET PROPERTIES ('description' = 'Customer transaction data').
+Lineage and Quality Monitoring: Enable automatic lineage capture via Unity Catalog's integration with Lakeflow. Implement data quality rules in DLT and monitor via Unity Catalog's quality metrics.
+Access Controls: Use fine-grained ACLs at catalog level (e.g., GRANT USE CATALOG ON CATALOG prod_catalog TO analysts). Integrate with external identity providers for RBAC.
+Discovery and Search: Leverage Unity Catalog's semantic search for metadata queries, ensuring GenAI agents can retrieve assets dynamically.
+
+Enforcement Mechanisms:Automate via CI/CD pipelines in Databricks Repos: Scan for untagged assets and block merges.
+Audit quarterly using Unity Catalog's audit logs to maintain 95% compliance.
+
+This approach centralizes governance, making data "self-describing" for downstream BI and AI. 
+
+docs.databricks.com +1
+
+BI Outputs: ThoughtSpot and AI/BI GenieBI consumption focuses on intuitive, AI-powered interfaces to democratize insights without coding.ThoughtSpot Integration: Connect via Databricks SQL warehouses for live queries on Delta tables. Configure dedicated warehouses per user group to optimize performance and costs—e.g., one for finance with row-level security. Use ThoughtSpot's Spotter AI for natural language search on Unity Catalog-governed data, enabling "What-if" scenarios in real-time. 
+
+docs.databricks.com +1
+
+AI/BI Genie: Databricks' native GenAI BI tool for natural language interactions (e.g., "Show sales trends by region"). Create Genie spaces tied to specific catalogs, pulling metadata for context-aware responses. It integrates directly with Unity Catalog for secure, governed queries, reducing dashboard maintenance by 70%. 
+
+docs.databricks.com +1
+
+Workflow: Ingest data → Govern in Unity Catalog → Query via SQL warehouses → Visualize in ThoughtSpot/Genie. Agentic enhancement: Embed Genie in workflows where agents trigger BI queries autonomously.ML/AI Pipeline: LangChain and RAGLeverage Databricks for end-to-end ML/AI, focusing on RAG to ground GenAI in enterprise data and LangChain for agentic orchestration.Core Pipeline:Data Preparation: Use DLT to clean and vectorize data in Unity Catalog tables. Store embeddings in Mosaic AI Vector Search for efficient retrieval.
+RAG Implementation: Build RAG apps with LangChain's Databricks integrations—e.g., DatabricksVectorSearch retriever for querying vectors. Combine with foundation models like Llama 3.1 hosted on Databricks Model Serving. Example flow: User query → Retrieve relevant chunks from catalog → Augment prompt → Generate response via LLM. 
+
+docs.databricks.com +2
+
+Agentic Workflows: Use Mosaic AI Agent Framework to create multi-step agents (e.g., retrieve data → Analyze with RAG → Act via API calls). Integrate LangChain chains for reasoning loops, with evaluation via LLM judges for quality. 
+
+docs.databricks.com
+
+Deployment and Monitoring: Register models in MLflow, serve via endpoints. Track lineage back to Unity Catalog for explainability.
+
+**Technical Implementation Note:**
+For detailed ML/AI implementation patterns including:
+- 10-step ML training workflow with code examples
+- RAG architecture patterns (3+ approaches)
+- Fine-tuning workflows (LoRA, QLoRA)
+- Model deployment patterns (Blue-Green, Canary, A/B testing)
+- Production monitoring with Databuck integration
+
+See: `/databricks_ai_architecture/documentation/AI_ML_CAPABILITIES_SUMMARY.md`
+
+Use Case Example: Customer support agent—RAG retrieves product docs from catalog, LangChain orchestrates response generation, outputs to BI for trend analysis.
+
+Implementation RoadmapPhase
+Timeline
+Milestones
+Dependencies
+Foundation (Q1 2026)
+Months 1-3
+Migrate to Unity Catalog; Define metadata standards; Integrate ThoughtSpot/Genie.
+Data inventory audit.
+GenAI Build (Q2 2026)
+Months 4-6
+Deploy first RAG pipeline with LangChain; Pilot agentic workflow (e.g., sales forecasting).
+Vector Search setup.
+Scale & Optimize (Q3 2026)
+Months 7-9
+Roll out 5+ agents; Automate metadata enforcement; Measure ROI via usage metrics.
+Training for teams.
+Mature (Q4 2026)
+Months 10-12
+Full governance audits; Expand to 10+ use cases; Integrate feedback loops for agent improvement.
+Executive buy-in.
+
+Governance and Best PracticesSecurity: Enforce least-privilege via Unity Catalog; Use Databricks' agent evaluation tools to mitigate biases/hallucinations. 
+
+techtarget.com
+
+Scalability: Leverage serverless compute for BI queries; Monitor costs with Unity Catalog usage analytics.
+Adoption: Train via Databricks Academy; Start with low-risk pilots like internal Q&A bots.
+Metrics: Track success with KPIs like query resolution time (target: <5s), agent accuracy (>90%), and data freshness (<1 day).
+
+This strategy positions your organization as an AI leader, fully exploiting Databricks' ecosystem for GenAI excellence. For customization, provide specifics on your data volumes or domains.
+
