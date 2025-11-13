@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" modified="2025-11-10T12:30:00.000Z" agent="Claude" version="21.0.0" etag="horizontal-lakehouse-v2" type="device">
   <diagram id="horizontal-lakehouse" name="Databricks Lakehouse - Horizontal Flow">
-    <mxGraphModel dx="1920" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="1920" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1400" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -382,6 +382,206 @@
               <mxPoint x="965" y="700" />
               <mxPoint x="1440" y="700" />
               <mxPoint x="1440" y="170" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ========== ML TRAINING & MODEL LIFECYCLE SECTION ========== -->
+
+        <!-- ML Section Container (Light Purple) -->
+        <mxCell id="ml-lifecycle-container" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#6A1B9A;strokeWidth=4;arcSize=5;shadow=1" vertex="1" parent="1">
+          <mxGeometry x="30" y="850" width="1630" height="480" as="geometry" />
+        </mxCell>
+
+        <!-- ML Section Header -->
+        <mxCell id="ml-lifecycle-header" value="ML TRAINING &amp; MODEL LIFECYCLE" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;fontStyle=1;fontColor=#6A1B9A" vertex="1" parent="1">
+          <mxGeometry x="30" y="860" width="1630" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Subtitle -->
+        <mxCell id="ml-lifecycle-subtitle" value="How Databricks Enables AI/ML at Scale with Databuck Quality Gates" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=2;fontColor=#333333" vertex="1" parent="1">
+          <mxGeometry x="30" y="895" width="1630" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ROW 1: Steps 1-5 -->
+
+        <!-- Step 1: Data Preparation -->
+        <mxCell id="ml-step1" value="1️⃣ Data Preparation&#xa;&#xa;Source: Gold Layer&#xa;✓ Databuck Trust Score ≥80%&#xa;Feature Engineering" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6A1B9A;strokeWidth=3;fontColor=#333333;fontStyle=1;fontSize=11;shadow=1;arcSize=10" vertex="1" parent="1">
+          <mxGeometry x="60" y="940" width="150" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- Step 2: Feature Store -->
+        <mxCell id="ml-step2" value="2️⃣ Feature Store&#xa;&#xa;Centralized Features&#xa;Point-in-time Lookup&#xa;Online/Offline Store" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6A1B9A;strokeWidth=3;fontColor=#333333;fontStyle=1;fontSize=11;shadow=1;arcSize=10" vertex="1" parent="1">
+          <mxGeometry x="250" y="940" width="150" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- Step 3: Model Training -->
+        <mxCell id="ml-step3" value="3️⃣ Model Training&#xa;&#xa;🎓 Spark ML&#xa;🎓 PyTorch / TensorFlow&#xa;Distributed Training" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6A1B9A;strokeWidth=3;fontColor=#333333;fontStyle=1;fontSize=11;shadow=1;arcSize=10" vertex="1" parent="1">
+          <mxGeometry x="440" y="940" width="150" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- Step 4: MLflow Tracking -->
+        <mxCell id="ml-step4" value="4️⃣ MLflow Tracking&#xa;&#xa;Experiment Tracking&#xa;Hyperparameter Tuning&#xa;Metric Logging" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6A1B9A;strokeWidth=3;fontColor=#333333;fontStyle=1;fontSize=11;shadow=1;arcSize=10" vertex="1" parent="1">
+          <mxGeometry x="630" y="940" width="150" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- Step 5: Model Registry -->
+        <mxCell id="ml-step5" value="5️⃣ Model Registry&#xa;&#xa;Version Management&#xa;Stage Transitions&#xa;(Dev/Staging/Prod)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6A1B9A;strokeWidth=3;fontColor=#333333;fontStyle=1;fontSize=11;shadow=1;arcSize=10" vertex="1" parent="1">
+          <mxGeometry x="820" y="940" width="150" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- ROW 2: Steps 6-10 -->
+
+        <!-- Step 6: Model Validation -->
+        <mxCell id="ml-step6" value="6️⃣ Model Validation&#xa;&#xa;A/B Testing&#xa;Champion/Challenger&#xa;✓ Databuck Quality Check" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E74856;strokeWidth=3;fontColor=#333333;fontStyle=1;fontSize=11;shadow=1;arcSize=10" vertex="1" parent="1">
+          <mxGeometry x="60" y="1090" width="150" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- Step 7: Staging Deployment -->
+        <mxCell id="ml-step7" value="7️⃣ Staging Deploy&#xa;&#xa;Pre-Production Testing&#xa;Integration Tests&#xa;Performance Validation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#FF9800;strokeWidth=3;fontColor=#333333;fontStyle=1;fontSize=11;shadow=1;arcSize=10" vertex="1" parent="1">
+          <mxGeometry x="250" y="1090" width="150" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- Step 8: Production Serving -->
+        <mxCell id="ml-step8" value="8️⃣ Production Serving&#xa;&#xa;REST API Endpoints&#xa;&lt;100ms Latency&#xa;Auto-scaling" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#FF9800;strokeWidth=3;fontColor=#333333;fontStyle=1;fontSize=11;shadow=1;arcSize=10" vertex="1" parent="1">
+          <mxGeometry x="440" y="1090" width="150" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- Step 9: Databuck Monitoring (RED EMPHASIS) -->
+        <mxCell id="ml-step9" value="9️⃣ Databuck Monitoring&#xa;&#xa;🛡️ Drift Detection&#xa;🛡️ Quality Tracking&#xa;🛡️ Performance Metrics" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF5F5;strokeColor=#E74856;strokeWidth=4;fontColor=#E74856;fontStyle=1;fontSize=11;shadow=1;arcSize=10" vertex="1" parent="1">
+          <mxGeometry x="630" y="1090" width="150" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- Step 10: Auto Retraining -->
+        <mxCell id="ml-step10" value="🔟 Auto Retraining&#xa;&#xa;Triggered by Drift&#xa;Scheduled Retraining&#xa;Continuous Improvement" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6A1B9A;strokeWidth=3;fontColor=#333333;fontStyle=1;fontSize=11;shadow=1;arcSize=10" vertex="1" parent="1">
+          <mxGeometry x="820" y="1090" width="150" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- GenAI Components Section (Right Side) -->
+
+        <!-- GenAI Container -->
+        <mxCell id="genai-container" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE0B2;strokeColor=#FF6B6B;strokeWidth=4;arcSize=8;shadow=1" vertex="1" parent="1">
+          <mxGeometry x="1020" y="940" width="600" height="260" as="geometry" />
+        </mxCell>
+
+        <!-- GenAI Header -->
+        <mxCell id="genai-header" value="GENERATIVE AI &amp; FOUNDATION MODELS" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#FF6B6B" vertex="1" parent="1">
+          <mxGeometry x="1020" y="950" width="600" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Foundation Models Box -->
+        <mxCell id="genai-models" value="🤖 Foundation Model APIs&#xa;&#xa;• DBRX (132B MoE)&#xa;• Llama 3.1 (8B, 70B, 405B)&#xa;• MPT-7B, MPT-30B&#xa;• BGE Embeddings" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#FF6B6B;strokeWidth=2;fontColor=#333333;fontStyle=0;fontSize=10;shadow=1;arcSize=8;align=left" vertex="1" parent="1">
+          <mxGeometry x="1040" y="990" width="270" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- RAG System Box -->
+        <mxCell id="genai-rag" value="🔍 RAG System&#xa;&#xa;Documents → Chunking →&#xa;Embeddings → Vector Search →&#xa;LLM + Context → Response" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8E24AA;strokeWidth=2;fontColor=#333333;fontStyle=0;fontSize=10;shadow=1;arcSize=8;align=left" vertex="1" parent="1">
+          <mxGeometry x="1330" y="990" width="270" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- Agentic AI Box -->
+        <mxCell id="genai-agents" value="🤝 Agentic AI Framework&#xa;&#xa;Multi-Agent Orchestration:&#xa;Data Agent | ML Agent | Report Agent&#xa;→ Coordinator Agent&#xa;Tools: SQL, APIs, Models" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8E24AA;strokeWidth=2;fontColor=#333333;fontStyle=0;fontSize=10;shadow=1;arcSize=8;align=left" vertex="1" parent="1">
+          <mxGeometry x="1040" y="1110" width="270" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Fine-tuning Box -->
+        <mxCell id="genai-finetune" value="⚙️ Fine-Tuning&#xa;&#xa;• LoRA&#xa;• Full Fine-Tuning&#xa;• Few-Shot Learning" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#FF9800;strokeWidth=2;fontColor=#333333;fontStyle=0;fontSize=10;shadow=1;arcSize=8;align=left" vertex="1" parent="1">
+          <mxGeometry x="1330" y="1110" width="270" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ML Workflow Arrows -->
+
+        <!-- Step 1 → Step 2 -->
+        <mxCell id="ml-arrow1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=4;strokeColor=#6A1B9A;endArrow=block;endFill=1" edge="1" parent="1" source="ml-step1" target="ml-step2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Step 2 → Step 3 -->
+        <mxCell id="ml-arrow2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=4;strokeColor=#6A1B9A;endArrow=block;endFill=1" edge="1" parent="1" source="ml-step2" target="ml-step3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Step 3 → Step 4 -->
+        <mxCell id="ml-arrow3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=4;strokeColor=#6A1B9A;endArrow=block;endFill=1" edge="1" parent="1" source="ml-step3" target="ml-step4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Step 4 → Step 5 -->
+        <mxCell id="ml-arrow4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=4;strokeColor=#6A1B9A;endArrow=block;endFill=1" edge="1" parent="1" source="ml-step4" target="ml-step5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Step 5 → Step 6 (down and left) -->
+        <mxCell id="ml-arrow5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=4;strokeColor=#6A1B9A;endArrow=block;endFill=1" edge="1" parent="1" source="ml-step5" target="ml-step6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="895" y="1070" />
+              <mxPoint x="135" y="1070" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Step 6 → Step 7 -->
+        <mxCell id="ml-arrow6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=4;strokeColor=#FF9800;endArrow=block;endFill=1" edge="1" parent="1" source="ml-step6" target="ml-step7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Step 7 → Step 8 -->
+        <mxCell id="ml-arrow7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=4;strokeColor=#FF9800;endArrow=block;endFill=1" edge="1" parent="1" source="ml-step7" target="ml-step8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Step 8 → Step 9 -->
+        <mxCell id="ml-arrow8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=4;strokeColor=#FF9800;endArrow=block;endFill=1" edge="1" parent="1" source="ml-step8" target="ml-step9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Step 9 → Step 10 -->
+        <mxCell id="ml-arrow9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=4;strokeColor=#E74856;endArrow=block;endFill=1" edge="1" parent="1" source="ml-step9" target="ml-step10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Step 10 → Step 1 (feedback loop - dashed) -->
+        <mxCell id="ml-arrow10" value="Retrain" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#E74856;dashed=1;dashPattern=8 4;endArrow=block;endFill=1;curved=1;fontSize=11;fontColor=#E74856;fontStyle=1" edge="1" parent="1" source="ml-step10" target="ml-step1">
+          <mxGeometry x="0.2" y="10" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1000" y="1145" />
+              <mxPoint x="1000" y="1270" />
+              <mxPoint x="30" y="1270" />
+              <mxPoint x="30" y="995" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Databuck Validation Checkpoint 1 (after Data Prep) -->
+        <mxCell id="databuck-checkpoint1" value="✓ DATABUCK&#xa;Trust Score ≥80%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E74856;strokeColor=#E74856;strokeWidth=2;fontColor=#ffffff;fontStyle=1;fontSize=9;shadow=1" vertex="1" parent="1">
+          <mxGeometry x="220" y="970" width="90" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Databuck Validation Checkpoint 2 (at Model Validation) -->
+        <mxCell id="databuck-checkpoint2" value="✓ DATABUCK&#xa;Model Quality" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E74856;strokeColor=#E74856;strokeWidth=2;fontColor=#ffffff;fontStyle=1;fontSize=9;shadow=1" vertex="1" parent="1">
+          <mxGeometry x="220" y="1120" width="90" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Gold Layer → ML Step 1 (data source) -->
+        <mxCell id="ml-source-arrow" value="Gold Layer Data" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=4;strokeColor=#FFD700;dashed=1;dashPattern=8 4;endArrow=block;endFill=1;fontSize=11;fontColor=#333333;fontStyle=2" edge="1" parent="1" source="gold" target="ml-step1">
+          <mxGeometry x="0.1" y="15" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="840" y="480" />
+              <mxPoint x="840" y="810" />
+              <mxPoint x="135" y="810" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ML Step 3 → GenAI Models (training uses GenAI) -->
+        <mxCell id="ml-genai-arrow" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#FF6B6B;dashed=1;dashPattern=4 4;endArrow=block;endFill=1" edge="1" parent="1" source="ml-step3" target="genai-models">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="515" y="920" />
+              <mxPoint x="1175" y="920" />
             </Array>
           </mxGeometry>
         </mxCell>
