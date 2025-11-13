@@ -95,7 +95,7 @@
         </mxCell>
 
         <!-- MLOps Label -->
-        <mxCell id="mlops-label" value="MLOps & Tracking:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#6A1B9A" vertex="1" parent="1">
+        <mxCell id="mlops-label" value="MLOps &amp; Tracking:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#6A1B9A" vertex="1" parent="1">
           <mxGeometry x="60" y="985" width="150" height="20" as="geometry" />
         </mxCell>
 
@@ -266,7 +266,7 @@
         </mxCell>
 
         <!-- Monitoring Section -->
-        <mxCell id="monitoring-label" value="Monitoring & Observability:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#1565C0" vertex="1" parent="1">
+        <mxCell id="monitoring-label" value="Monitoring &amp; Observability:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#1565C0" vertex="1" parent="1">
           <mxGeometry x="600" y="540" width="220" height="20" as="geometry" />
         </mxCell>
 
@@ -356,7 +356,7 @@
           <mxGeometry x="1020" y="200" width="160" height="80" as="geometry" />
         </mxCell>
 
-        <!-- BI & Analytics -->
+        <!-- BI &amp; Analytics -->
         <mxCell id="bi-analytics" value="BI &amp; Analytics&#xa;&#xa;ThoughtSpot&#xa;AI/BI Genie&#xa;Power BI&#xa;Tableau" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;strokeWidth=2;fontColor=#333333;fontStyle=1;fontSize=10;shadow=1;arcSize=10;align=center" vertex="1" parent="1">
           <mxGeometry x="1210" y="200" width="150" height="110" as="geometry" />
         </mxCell>
